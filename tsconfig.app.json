@@ -29,5 +29,5 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["custom.d.ts"]
+    "include": ["typing.d.ts"]
 }

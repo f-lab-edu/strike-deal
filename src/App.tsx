@@ -10,10 +10,10 @@ const MyButton = styled(Button)`
 
 function App() {
     return (
-        <>
+        <div>
             <div>Hello</div>
             <MyButton>button</MyButton>
-        </>
+        </div>
     );
 }
 

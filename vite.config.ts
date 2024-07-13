@@ -1,6 +1,7 @@
 import * as path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin';
 import svgrPlugin from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
@@ -10,6 +11,7 @@ export default defineConfig({
             jsxImportSource: '@emotion/react',
         }),
         svgrPlugin(),
+        TanStackRouterVite(),
     ],
     server: {
         port: 3000,
