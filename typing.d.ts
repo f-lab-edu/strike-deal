@@ -5,9 +5,3 @@ declare module '*.svg' {
     const src: string;
     export default src;
 }
-
-declare module '@tanstack/react-router' {
-    interface Register {
-        router: typeof router;
-    }
-}
