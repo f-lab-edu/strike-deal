@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 const headerStyle = {
     wrapper: css({
         width: '100%',
-        position: 'fixed',
+        maxWidth: 1200,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
