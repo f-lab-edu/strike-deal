@@ -1,5 +1,7 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
 import { createFileRoute } from '@tanstack/react-router';
+import { Header } from '../layout';
+import { mainStyle } from '../styles/MainStyle';
 
 export const Route = createFileRoute('/')({
     component: Main,
@@ -7,8 +9,10 @@ export const Route = createFileRoute('/')({
 
 function Main() {
     return (
-        <div>
-            <h3>Main Page</h3>
+        <div css={mainStyle.wrapper}>
+            <div css={mainStyle.content}>
+                <Header />
+            </div>
         </div>
     );
 }
