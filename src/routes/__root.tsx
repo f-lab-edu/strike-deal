@@ -1,7 +1,10 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
 import { QueryClient } from '@tanstack/react-query';
 import { Button } from 'antd';
+import { Header } from '../layout';
+import { mainStyle } from '../styles/MainStyle';
 import styled from '@emotion/styled';
 
 export const Route = createRootRouteWithContext<{
@@ -36,14 +39,11 @@ const TopLoginButton = styled(Button)`
 
 function RootComponent() {
     return (
-        <>
-            {/* <TopWrapper>
-                <TopContents>
-                    <TopLoginButton type="text">로그인 / 회원가입</TopLoginButton>
-                    <Button type="text">내 상점</Button>
-                </TopContents>
-            </TopWrapper> */}
+        <div css={mainStyle.wrapper}>
+            <div css={mainStyle.content}>
+                <Header />
+            </div>
             <Outlet />
-        </>
+        </div>
     );
 }

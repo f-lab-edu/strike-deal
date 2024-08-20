@@ -11,10 +11,10 @@ const headerStyle = {
     }),
     header: css({
         width: '100%',
-        minWidth: 600,
+        // minWidth: 600,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
     }),
 };

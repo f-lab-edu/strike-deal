@@ -29,7 +29,6 @@ function Header() {
                         Exclusive
                     </div>
                     <div
-                        id="memu"
                         style={{
                             display: 'flex',
                             flexDirection: 'row',
@@ -55,7 +54,6 @@ function Header() {
                         >
                             Contact
                         </div>
-
                         <div
                             style={{
                                 textAlign: 'center',
@@ -73,9 +71,9 @@ function Header() {
                             내 상점
                         </div>
                     </div>
-                    <div>
-                        <Search placeholder="찾고 있는 물건이 있나요?" />
-                    </div>
+                </div>
+                <div>
+                    <Search placeholder="찾고 있는 물건이 있나요?" />
                 </div>
                 <div>
                     <ShoppingCartOutlined style={{ fontSize: 24 }} />

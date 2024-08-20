@@ -21,20 +21,44 @@ const mainStyle = {
         alignItems: 'center',
         margin: 20,
     }),
-    categoryBox: css({
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        gap: 12,
-    }),
-    category: css({
-        width: 120,
-        height: 80,
-        padding: 25,
-        border: '1px black solid',
-        borderRadius: 4,
-    }),
+    carousel: css(
+        {
+            display: 'flex',
+            width: '100%',
+            maxWidth: '800px',
+            height: '300px',
+            margin: 0,
+            color: '#fff',
+            fontWeight: 800,
+            textAlign: 'center',
+            overflow: 'hidden',
+        },
+        {
+            '.ant-card-body': {
+                padding: 0,
+            },
+        }
+    ),
+    categoryBox: css(
+        {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            fontSize: 16,
+            fontWeight: 600,
+            gap: 12,
+        },
+        {
+            div: {
+                width: 120,
+                height: 80,
+                padding: 25,
+                border: '1px black solid',
+                borderRadius: 4,
+            },
+        }
+    ),
 };
 
 export { mainStyle };
