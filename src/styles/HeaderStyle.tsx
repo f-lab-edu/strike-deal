@@ -26,7 +26,13 @@ const headerStyle = {
             fontWeight: 700,
         },
         ':nth-child(2)': { flexGrow: 2 },
-        ':nth-child(3)': { flexGrow: 0.5 },
+        ':nth-child(3)': {
+            flexGrow: 0.5,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            gap: 12,
+        },
     }),
 };
 

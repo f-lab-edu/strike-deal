@@ -20,15 +20,7 @@ function Header() {
                     <div>About</div>
                     <div>내 상점</div>
                 </div>
-                <div
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-around',
-                        gap: 12,
-                    }}
-                    css={headerStyle.headerItem}
-                >
+                <div css={headerStyle.headerItem}>
                     <Search style={{ maxWidth: '250px' }} placeholder="찾고 있는 물건이 있나요?" />
                     <UserOutlined style={{ fontSize: 24 }} />
                     <ShoppingCartOutlined style={{ fontSize: 24 }} />

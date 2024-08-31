@@ -39,6 +39,10 @@ const mainStyle = {
             },
         }
     ),
+    catecories: css({
+        display: 'flex',
+        flexDirection: 'column',
+    }),
     categoryBox: css(
         {
             display: 'flex',
