@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { createFileRoute } from '@tanstack/react-router';
-import { Header } from '../layout';
 import { mainStyle } from '../styles/MainStyle';
 
 export const Route = createFileRoute('/')({
@@ -9,10 +8,23 @@ export const Route = createFileRoute('/')({
 
 function Main() {
     return (
-        <div css={mainStyle.wrapper}>
+        <>
             <div css={mainStyle.content}>
-                <Header />
+                <div css={mainStyle.body}>
+                    <div css={mainStyle.catecories}>
+                        <div>Categories</div>
+                        <div>Browse By Category</div>
+                        <div css={mainStyle.categoryBox}>
+                            <div>Phones</div>
+                            <div>Computers</div>
+                            <div>SmartWatch</div>
+                            <div>Camera</div>
+                            <div>HeadPhones</div>
+                            <div>Gaming</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
