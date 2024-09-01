@@ -1,8 +1,7 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { Card } from 'antd';
-import type { TodayRegProductType } from './MainPageTypes';
 import { mainStyle } from '../../styles/MainStyle';
+import type { TodayRegProductType } from './types';
 
 const { Meta } = Card;
 

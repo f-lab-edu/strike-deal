@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { Input } from 'antd';
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';

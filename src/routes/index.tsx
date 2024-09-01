@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { Flex } from 'antd';
 import { TodayRegProductCard } from '../components';
@@ -16,7 +16,7 @@ const productsList: TodayRegProductType[] = [
         title: '윌슨 투수 글러브 팝니다.',
         description: '회전근개 파열로 투수 관둡니다.',
         img: 'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
-        price: '200,000',
+        price: '200000',
         seller: {
             id: 'user_00001',
             name: '김투수',
@@ -35,7 +35,7 @@ const productsList: TodayRegProductType[] = [
         title: '윌슨 투수 글러브 팝니다.',
         description: '회전근개 파열로 투수 관둡니다.',
         img: 'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
-        price: '200,000',
+        price: '200000',
         seller: {
             id: 'user_00001',
             name: '김투수',
@@ -54,7 +54,7 @@ const productsList: TodayRegProductType[] = [
         title: '윌슨 투수 글러브 팝니다.',
         description: '회전근개 파열로 투수 관둡니다.',
         img: 'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
-        price: '200,000',
+        price: '200000',
         seller: {
             id: 'user_00001',
             name: '김투수',
