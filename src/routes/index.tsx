@@ -3,13 +3,13 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Flex } from 'antd';
 import { TodayRegProductCard } from '../components';
 import { mainStyle } from '../styles/MainStyle';
-import type { TodayRegProductType } from '../components';
+import type { TodayRegProductType } from '../components/main/types';
 
 export const Route = createFileRoute('/')({
     component: Main,
 });
 
-const productsList: TodayRegProductType[] = [
+const products: TodayRegProductType[] = [
     {
         id: 'product_00001',
         createdDate: '2024-08-31',
@@ -90,7 +90,7 @@ function Main() {
                         <h2>Today's Products</h2>
                     </div>
                     <Flex wrap align="start" gap="large" justify="start">
-                        {productsList.map((product) => (
+                        {products.map((product) => (
                             <TodayRegProductCard key={product.id} product={product} />
                         ))}
                     </Flex>

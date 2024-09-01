@@ -1,4 +1,4 @@
-export type TodayRegProductType = {
+type TodayRegProductType = {
     id: string;
     createdDate: string;
     title: string;
@@ -10,14 +10,16 @@ export type TodayRegProductType = {
     productInfo: ProductType;
 };
 
-export type SellerType = {
+type SellerType = {
     id: string;
     name: string;
 };
 
-export type ProductType = {
+type ProductType = {
     brand: string;
     color: string;
     size: string;
     hand: string;
 };
+
+export { TodayRegProductType, SellerType, ProductType };

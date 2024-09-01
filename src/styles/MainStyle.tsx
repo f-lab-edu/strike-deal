@@ -53,14 +53,14 @@ const mainStyle = {
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center',
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: 600,
             gap: 12,
         },
         {
             div: {
                 width: 120,
-                height: 80,
+                height: 40,
                 padding: 25,
                 border: '1px black solid',
                 borderRadius: 4,
