@@ -5,6 +5,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:react-hooks/recommended',
+        'plugin:react/recommended',
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
@@ -12,6 +13,6 @@ module.exports = {
     rules: {
         'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
         'react/jsx-uses-react': 'off',
-        'react/react-in-jsx-scope': 'off',
+        'react/no-unknown-property': ['error', { ignore: ['css'] }],
     },
 };

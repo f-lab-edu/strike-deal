@@ -4,7 +4,6 @@ const mainStyle = {
     wrapper: css({
         width: '100%',
         height: '100%',
-        overflow: 'hidden',
     }),
     content: css({
         width: '100%',
@@ -15,11 +14,15 @@ const mainStyle = {
         marginBottom: 16,
     }),
     body: css({
+        position: 'relative',
+        height: '100%',
+        minHeight: 800,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
         margin: 20,
+        gap: 20,
     }),
     carousel: css(
         {
@@ -42,6 +45,7 @@ const mainStyle = {
     catecories: css({
         display: 'flex',
         flexDirection: 'column',
+        marginBottom: 20,
     }),
     categoryBox: css(
         {
@@ -49,17 +53,40 @@ const mainStyle = {
             flexDirection: 'row',
             justifyContent: 'space-around',
             alignItems: 'center',
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: 600,
             gap: 12,
         },
         {
             div: {
                 width: 120,
-                height: 80,
+                height: 40,
                 padding: 25,
                 border: '1px black solid',
                 borderRadius: 4,
+            },
+        }
+    ),
+    todayProducts: css({
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    }),
+    productCard: css(
+        {
+            width: 200,
+            border: '1px solid #DFDFDF',
+        },
+        {
+            '.ant-card-meta-title': {
+                fontSize: 14,
+            },
+            '.ant-card-meta-description': {
+                fontSize: 12,
+            },
+            '.ant-card-cover': {
+                margin: 0,
             },
         }
     ),

@@ -12,6 +12,12 @@ export default defineConfig({
             jsxImportSource: '@emotion/react',
             babel: {
                 plugins: ['@emotion/babel-plugin'],
+                presets: [
+                    [
+                        '@babel/preset-react',
+                        { runtime: 'automatic', importSource: '@emotion/react' },
+                    ],
+                ],
             },
         }),
         svgrPlugin(),
