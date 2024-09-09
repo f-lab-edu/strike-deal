@@ -1,76 +1,38 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { ProductDetail } from '../components';
-import { Button, Carousel } from 'antd';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 export const Route = createFileRoute('/product')({
     component: Product,
 });
 
-const productDetailWrapperStyle: React.CSSProperties = {
-    width: '100%',
-    maxHeight: 600,
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    flex: '1 1 50%',
+const mockProduct = {
+    id: 'product_00001',
+    createdDate: '2024-08-31',
+    updateDate: '2024-08-31',
+    title: '윌슨 투수 글러브 팝니다.',
+    description: '회전근개 파열로 투수 관둡니다.',
+    img: [
+        'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
+        'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
+    ],
+    price: 200000,
+    category: 'gloves',
+    brand: 'wilson',
+    color: ['black', 'blue'],
+    size: '12',
+    postUser: {
+        id: 'user_00001',
+        name: '김투수',
+    },
+    likes: 5,
+    count: 43,
 };
-
-const productImgDetailStyle: React.CSSProperties = {
-    width: '50%',
-    height: 400,
-    alignContent: 'center',
-    verticalAlign: 'middle',
-};
-
-const imgStyle: React.CSSProperties = {
-    width: 300,
-    height: 300,
-    margin: '0 auto',
-};
-
-const arrowButton = css`
-    .slick-arrow {
-        color: grey;
-    }
-    .slick-dots {
-        button {
-            background-color: grey;
-        }
-    }
-`;
 
 function Product() {
     return (
-        <div style={productDetailWrapperStyle}>
-            <div style={productImgDetailStyle}>
-                <Carousel arrows dots css={arrowButton}>
-                    <div
-                        style={{
-                            overflow: 'hidden',
-                            width: '50%',
-                            maxWidth: 400,
-                            alignContent: 'center',
-                        }}
-                    >
-                        <img
-                            src="https://shop-phinf.pstatic.net/20240829_248/1724899383166NaSpA_JPEG/4901609597450718_76377642.jpg?type=m510"
-                            style={imgStyle}
-                        />
-                    </div>
-                    <div>
-                        <img
-                            src="https://shop-phinf.pstatic.net/20240829_248/1724899383166NaSpA_JPEG/4901609597450718_76377642.jpg?type=m510"
-                            style={imgStyle}
-                        />
-                    </div>
-                </Carousel>
-            </div>
-            <div style={{ width: '50%' }}>
-                <h1>상세설명</h1>
-            </div>
-        </div>
+        <>
+            <ProductDetail {...mockProduct} />
+        </>
     );
 }
