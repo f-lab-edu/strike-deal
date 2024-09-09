@@ -42,7 +42,9 @@ function RootComponent() {
             <div css={mainStyle.content}>
                 <Header />
             </div>
-            <Outlet />
+            <div css={mainStyle.body}>
+                <Outlet />
+            </div>
         </div>
     );
 }

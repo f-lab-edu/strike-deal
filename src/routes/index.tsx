@@ -72,29 +72,27 @@ const products: TodayRegProductType[] = [
 function Main() {
     return (
         <>
-            <div css={mainStyle.body}>
-                <div css={mainStyle.catecories}>
-                    <div>Categories</div>
-                    <div>Browse By Category</div>
-                    <div css={mainStyle.categoryBox}>
-                        <div>Phones</div>
-                        <div>Computers</div>
-                        <div>SmartWatch</div>
-                        <div>Camera</div>
-                        <div>HeadPhones</div>
-                        <div>Gaming</div>
-                    </div>
+            <div css={mainStyle.catecories}>
+                <div>Categories</div>
+                <div>Browse By Category</div>
+                <div css={mainStyle.categoryBox}>
+                    <div>Phones</div>
+                    <div>Computers</div>
+                    <div>SmartWatch</div>
+                    <div>Camera</div>
+                    <div>HeadPhones</div>
+                    <div>Gaming</div>
                 </div>
-                <div css={mainStyle.todayProducts}>
-                    <div>
-                        <h2>Today's Products</h2>
-                    </div>
-                    <Flex wrap align="start" gap="large" justify="start">
-                        {products.map((product) => (
-                            <TodayRegProductCard key={product.id} product={product} />
-                        ))}
-                    </Flex>
+            </div>
+            <div css={mainStyle.todayProducts}>
+                <div>
+                    <h2>Today's Products</h2>
                 </div>
+                <Flex wrap align="start" gap="large" justify="start">
+                    {products.map((product) => (
+                        <TodayRegProductCard key={product.id} product={product} />
+                    ))}
+                </Flex>
             </div>
         </>
     );
