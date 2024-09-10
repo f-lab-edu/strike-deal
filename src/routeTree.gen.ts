@@ -12,12 +12,18 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as ProductImport } from './routes/product'
+import { Route as LoginImport } from './routes/login'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
 
 const ProductRoute = ProductImport.update({
   path: '/product',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const LoginRoute = LoginImport.update({
+  path: '/login',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -44,6 +50,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductImport
       parentRoute: typeof rootRoute
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -60,7 +73,8 @@ export const routeTree = rootRoute.addChildren({ IndexRoute, ProductRoute })
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/product"
+        "/product",
+        "/login"
       ]
     },
     "/": {
@@ -68,6 +82,9 @@ export const routeTree = rootRoute.addChildren({ IndexRoute, ProductRoute })
     },
     "/product": {
       "filePath": "product.tsx"
+    },
+    "/login": {
+      "filePath": "login.tsx"
     }
   }
 }
