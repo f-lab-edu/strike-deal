@@ -1,2 +1,2 @@
-export const getBeautifiedNum = (val) =>
-    val < 1000 ? val : val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+export const getBeautifiedNum = (val: number) =>
+    val < 1000 ? val : val.toString().replace(/\d(?=(\d{3})+$)/g, '$&,');
