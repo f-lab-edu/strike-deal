@@ -43,13 +43,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/product': {
-      id: '/product'
-      path: '/product'
-      fullPath: '/product'
-      preLoaderRoute: typeof ProductImport
-      parentRoute: typeof rootRoute
-    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -57,12 +50,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
+    '/product': {
+      id: '/product'
+      path: '/product'
+      fullPath: '/product'
+      preLoaderRoute: typeof ProductImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ IndexRoute, ProductRoute })
+export const routeTree = rootRoute.addChildren({
+  IndexRoute,
+  LoginRoute,
+  ProductRoute,
+})
 
 /* prettier-ignore-end */
 
@@ -73,18 +77,18 @@ export const routeTree = rootRoute.addChildren({ IndexRoute, ProductRoute })
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/product",
-        "/login"
+        "/login",
+        "/product"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/product": {
-      "filePath": "product.tsx"
-    },
     "/login": {
       "filePath": "login.tsx"
+    },
+    "/product": {
+      "filePath": "product.tsx"
     }
   }
 }
