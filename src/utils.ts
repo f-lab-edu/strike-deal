@@ -1,14 +1,14 @@
 export const getBeautifiedNum = (val: number): string => {
-    const str = val.toString().split('').reverse();
+    const str = val.toString().split('').reverse(); // 뒤짚어서 3자리 단위로 콤마 찍기
 
-    // reduce를 사용하여 3자리마다 쉼표를 추가
-    const formatted = str.reduce((acc, digit, index) => {
-        // 인덱스가 3의 배수일 때마다(첫 번째 자리 제외) 쉼표를 추가
-        if (index % 3 === 0 && index !== 0) {
-            return digit + ',' + acc;
+    let formatted = '';
+
+    str.forEach((v, i) => {
+        if (i % 3 === 0 && i !== 0) {
+            formatted = ',' + formatted;
         }
-        return digit + acc;
-    }, '');
+        formatted = v + formatted;
+    });
 
     return formatted;
 };

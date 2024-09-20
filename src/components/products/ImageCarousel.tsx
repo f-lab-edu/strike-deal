@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'antd';
 
-function ImageCarousel(images: string[]) {
+const ImageCarousel = ({ images }: { images: string[] }) => {
     return (
         <Carousel arrows>
             {images.map((url) => {
@@ -13,4 +13,6 @@ function ImageCarousel(images: string[]) {
             })}
         </Carousel>
     );
-}
+};
+
+export default ImageCarousel;

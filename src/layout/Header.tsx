@@ -5,7 +5,7 @@ import { headerStyle } from '../styles/HeaderStyle';
 
 const { Search } = Input;
 
-function Header() {
+const Header = () => {
     return (
         <div css={headerStyle.wrapper}>
             <div css={headerStyle.header}>
@@ -27,6 +27,6 @@ function Header() {
             </div>
         </div>
     );
-}
+};
 
 export default Header;

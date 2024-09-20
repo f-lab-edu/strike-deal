@@ -1,10 +1,8 @@
 import React from 'react';
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
 import { QueryClient } from '@tanstack/react-query';
-import { Button } from 'antd';
 import { Header } from '../layout';
 import { mainStyle } from '../styles/MainStyle';
-import styled from '@emotion/styled';
 
 export const Route = createRootRouteWithContext<{
     queryClient: QueryClient;

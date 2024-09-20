@@ -30,9 +30,5 @@ const mockProduct = {
 };
 
 function Product() {
-    return (
-        <>
-            <ProductDetail {...mockProduct} />
-        </>
-    );
+    return <ProductDetail {...mockProduct} />;
 }
