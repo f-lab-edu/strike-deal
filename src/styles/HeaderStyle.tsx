@@ -19,15 +19,15 @@ const headerStyle = {
         gap: 16,
     }),
     headerItem: css({
-        ':nth-child(1)': {
+        ':nth-of-type(1)': {
             display: 'flex',
             alignItems: 'center',
             flexGrow: 0.5,
             fontSize: 28,
             fontWeight: 700,
         },
-        ':nth-child(2)': { flexGrow: 2 },
-        ':nth-child(3)': {
+        ':nth-of-type(2)': { flexGrow: 2 },
+        ':nth-of-type(3)': {
             flexGrow: 0.5,
             display: 'flex',
             flexDirection: 'row',

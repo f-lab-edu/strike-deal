@@ -12,6 +12,10 @@ const baseStyle = css`
         width: 100%;
         height: 100%;
     }
+
+    body {
+        box-sizing: border-box;
+    }
 `;
 
 const GlobalStyle = () => <Global styles={baseStyle} />;
