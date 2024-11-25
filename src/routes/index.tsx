@@ -15,7 +15,7 @@ const products: TodayRegProductType[] = [
         createdDate: '2024-08-31',
         title: '윌슨 투수 글러브 팝니다.',
         description: '회전근개 파열로 투수 관둡니다.',
-        img: 'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
+        img: 'https://godomall-storage.cdn-nhncommerce.com/ac23de62364d8a0eb93706f0d0f27a00/goods/1000005220/image/magnify/1000005220_magnify_046.png',
         price: '200000',
         seller: {
             id: 'user_00001',
@@ -34,7 +34,7 @@ const products: TodayRegProductType[] = [
         createdDate: '2024-08-31',
         title: '윌슨 투수 글러브 팝니다.',
         description: '회전근개 파열로 투수 관둡니다.',
-        img: 'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
+        img: 'https://godomall-storage.cdn-nhncommerce.com/ac23de62364d8a0eb93706f0d0f27a00/goods/1000005220/image/magnify/1000005220_magnify_046.png',
         price: '200000',
         seller: {
             id: 'user_00001',
@@ -53,7 +53,7 @@ const products: TodayRegProductType[] = [
         createdDate: '2024-08-31',
         title: '윌슨 투수 글러브 팝니다.',
         description: '회전근개 파열로 투수 관둡니다.',
-        img: 'https://www.yagooshop.com/shop/data/goods/1724833446916m0.jpg',
+        img: 'https://godomall-storage.cdn-nhncommerce.com/ac23de62364d8a0eb93706f0d0f27a00/goods/1000005220/image/magnify/1000005220_magnify_046.png',
         price: '200000',
         seller: {
             id: 'user_00001',
@@ -72,29 +72,27 @@ const products: TodayRegProductType[] = [
 function Main() {
     return (
         <>
-            <div css={mainStyle.body}>
-                <div css={mainStyle.catecories}>
-                    <div>Categories</div>
-                    <div>Browse By Category</div>
-                    <div css={mainStyle.categoryBox}>
-                        <div>Phones</div>
-                        <div>Computers</div>
-                        <div>SmartWatch</div>
-                        <div>Camera</div>
-                        <div>HeadPhones</div>
-                        <div>Gaming</div>
-                    </div>
+            <div css={mainStyle.catecories}>
+                <div>Categories</div>
+                <div>Browse By Category</div>
+                <div css={mainStyle.categoryBox}>
+                    <div>Phones</div>
+                    <div>Computers</div>
+                    <div>SmartWatch</div>
+                    <div>Camera</div>
+                    <div>HeadPhones</div>
+                    <div>Gaming</div>
                 </div>
-                <div css={mainStyle.todayProducts}>
-                    <div>
-                        <h2>Today's Products</h2>
-                    </div>
-                    <Flex wrap align="start" gap="large" justify="start">
-                        {products.map((product) => (
-                            <TodayRegProductCard key={product.id} product={product} />
-                        ))}
-                    </Flex>
+            </div>
+            <div css={mainStyle.todayProducts}>
+                <div>
+                    <h2>Today's Products</h2>
                 </div>
+                <Flex wrap align="start" gap="large" justify="start">
+                    {products.map((product) => (
+                        <TodayRegProductCard key={product.id} product={product} />
+                    ))}
+                </Flex>
             </div>
         </>
     );
