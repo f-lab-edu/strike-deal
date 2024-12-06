@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel, Divider } from 'antd';
 import { HeartFilled, EyeOutlined, HistoryOutlined } from '@ant-design/icons';
-import { getBeautifiedNum } from '../../utils';
+import { getBeautifiedNum } from '../../utils/utils';
 import { productStyle } from '../../styles/ProductStyle';
 import type { ProductDetailType } from './types';
 
