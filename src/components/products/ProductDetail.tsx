@@ -18,13 +18,13 @@ const {
     priceStyle,
 } = productStyle;
 
-const ProductDetail = (product: ProductDetailType) => {
-    const { title, price, likes } = product;
+const ProductDetail = ({ product }: { product: ProductDetailType }) => {
+    const { title, price, like_user } = product;
     return (
         <div css={wrapper}>
             <div css={productCard}>
                 <Carousel arrows draggable dots css={arrowButton}>
-                    {product.img.map((url) => {
+                    {product.product_img.map((url) => {
                         return (
                             <div key={product.id}>
                                 <img src={url} css={img} />
@@ -40,7 +40,7 @@ const ProductDetail = (product: ProductDetailType) => {
                 <div css={statusWrapper}>
                     <div css={statusContent}>
                         <HeartFilled />
-                        <p>{likes}</p>
+                        <p>{like_user}</p>
                     </div>
                     <div css={statusContent}>
                         <EyeOutlined />
@@ -48,7 +48,7 @@ const ProductDetail = (product: ProductDetailType) => {
                     </div>
                     <div css={statusContent}>
                         <HistoryOutlined />
-                        <p>{product.createdDate}</p>
+                        <p>{product.created_at}</p>
                     </div>
                 </div>
             </div>

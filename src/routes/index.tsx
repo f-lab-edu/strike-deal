@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import { PostgrestError } from '@supabase/supabase-js';
+import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
 import { Flex } from 'antd';
-import { supabase } from '../utils/superbase/superbase';
+import { getProducts } from '../api';
 import { TodayRegProductCard } from '../components';
 import { mainStyle } from '../styles/MainStyle';
-import type { TodayRegProductType } from '../components/main/types';
+
+const productsQueryOptions = queryOptions({
+    queryKey: ['products'],
+    queryFn: () => getProducts(),
+});
 
 export const Route = createFileRoute('/')({
+    loader: ({ context: { queryClient } }) => queryClient.ensureQueryData(productsQueryOptions),
     component: Main,
 });
 
 function Main() {
-    const [products, setProducts] = useState<TodayRegProductType[]>([]);
-    const [error, setError] = useState<PostgrestError | null>(null);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const { data, error } = await supabase.from('products').select('*');
-            if (error) {
-                setError(error);
-            } else {
-                setProducts(data);
-            }
-        };
-
-        fetchProducts();
-    }, []);
+    const productsQuery = useSuspenseQuery(productsQueryOptions);
+    const { data: products, isFetching } = productsQuery;
 
     return (
         <>
@@ -46,11 +38,17 @@ function Main() {
                 <div>
                     <h2>Today's Products</h2>
                 </div>
-                <Flex wrap align="start" gap="large" justify="start">
-                    {products.map((product) => (
-                        <TodayRegProductCard key={product.id} product={product} />
-                    ))}
-                </Flex>
+                {isFetching ? (
+                    <div>Loading...</div>
+                ) : (
+                    <Flex wrap align="start" gap="large" justify="start">
+                        {Array.isArray(products) &&
+                            products.length > 0 &&
+                            products.map((product) => (
+                                <TodayRegProductCard key={product.id} product={product} />
+                            ))}
+                    </Flex>
+                )}
             </div>
         </>
     );

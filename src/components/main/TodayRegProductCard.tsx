@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@tanstack/react-router';
 import { Card } from 'antd';
 import { mainStyle } from '../../styles/MainStyle';
 import type { TodayRegProductType } from './types';
@@ -9,13 +10,20 @@ const TodayRegProductCard = React.memo(({ product }: { product: TodayRegProductT
     const { title, product_img, description } = product;
 
     return (
-        <Card
-            hoverable
-            css={mainStyle.productCard}
-            cover={<img alt="product_img" src={product_img[0]} />}
+        <Link
+            to="/products/$productId"
+            params={{
+                productId: product.id,
+            }}
         >
-            <Meta title={title} description={description} />
-        </Card>
+            <Card
+                hoverable
+                css={mainStyle.productCard}
+                cover={<img alt="product_img" src={product_img[0]} />}
+            >
+                <Meta title={title} description={description} />
+            </Card>
+        </Link>
     );
 });
 
