@@ -1,6 +1,6 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
+import { queryOptions, useQuery } from '@tanstack/react-query';
 import { getProductDetail } from '../api';
 import { ProductDetail } from '../components';
 
@@ -19,7 +19,7 @@ export const Route = createFileRoute('/products/$productId')({
 
 function Product() {
     const productId = Route.useParams().productId;
-    const { data: product, isFetching } = useSuspenseQuery(productQueryOptions(productId));
+    const { data: product, isFetching } = useQuery(productQueryOptions(productId));
 
     if (isFetching) {
         return <div>Loading...</div>;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
+import { queryOptions, useSuspenseQuery, useQuery } from '@tanstack/react-query';
 import { Flex } from 'antd';
 import { getProducts } from '../api';
 import { TodayRegProductCard } from '../components';
@@ -17,7 +17,7 @@ export const Route = createFileRoute('/')({
 });
 
 function Main() {
-    const productsQuery = useSuspenseQuery(productsQueryOptions);
+    const productsQuery = useQuery(productsQueryOptions);
     const { data: products, isFetching } = productsQuery;
 
     return (
