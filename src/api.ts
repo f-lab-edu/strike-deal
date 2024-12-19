@@ -1,7 +1,19 @@
-import { supabase } from './utils/superbase/superbase';
+import { supabase } from './utils/supabase/supabase';
 
-export const getProducts = async () => {
-    const { data, error } = await supabase.from('products').select('*');
+type SearchProductType = {
+    title?: string;
+    id?: string;
+    category?: string;
+};
+
+const fetchFromSupabase = async (table: string, filters: SearchProductType = {}) => {
+    let query = supabase.from(table).select('*');
+
+    for (const [key, value] of Object.entries(filters)) {
+        query = query.eq(key, value);
+    }
+
+    const { data, error } = await query;
 
     if (error) {
         return error;
@@ -10,12 +22,10 @@ export const getProducts = async () => {
     return data;
 };
 
+export const getProducts = async () => {
+    return await fetchFromSupabase('products');
+};
+
 export const getProductDetail = async (productId: string) => {
-    const { data, error } = await supabase.from('products').select().eq('id', productId);
-
-    if (error) {
-        return error;
-    }
-
-    return data;
+    return await fetchFromSupabase('products', { id: productId });
 };
