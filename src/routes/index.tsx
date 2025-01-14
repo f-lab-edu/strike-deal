@@ -1,6 +1,6 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
-import { queryOptions, useSuspenseQuery, useQuery } from '@tanstack/react-query';
+import { queryOptions, useQuery } from '@tanstack/react-query';
 import { Flex } from 'antd';
 import { getProducts } from '../api';
 import { TodayRegProductCard } from '../components';

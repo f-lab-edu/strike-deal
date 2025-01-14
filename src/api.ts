@@ -6,6 +6,16 @@ type SearchProductType = {
     category?: string;
 };
 
+const executeQuery = async (query) => {
+    const { data, error } = await query;
+
+    if (error) {
+        return error;
+    }
+
+    return data !== null ? data : [];
+};
+
 const fetchFromSupabase = async (table: string, filters: SearchProductType = {}) => {
     let query = supabase.from(table).select('*');
 
@@ -13,13 +23,7 @@ const fetchFromSupabase = async (table: string, filters: SearchProductType = {})
         query = query.eq(key, value);
     }
 
-    const { data, error } = await query;
-
-    if (error) {
-        return error;
-    }
-
-    return data;
+    return await executeQuery(query);
 };
 
 export const getProducts = async () => {
