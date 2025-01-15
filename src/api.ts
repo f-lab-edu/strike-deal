@@ -6,14 +6,19 @@ type SearchProductType = {
     category?: string;
 };
 
-const executeQuery = async (query) => {
-    const { data, error } = await query;
+type QueryResult<T> = {
+    data: T | null;
+    error: Error;
+};
+
+const executeQuery = async <T>(query): Promise<T | Error> => {
+    const { data, error }: QueryResult<T> = await query;
 
     if (error) {
         return error;
     }
 
-    return data !== null ? data : [];
+    return data !== null ? data : new Error('No data');
 };
 
 const fetchFromSupabase = async (table: string, filters: SearchProductType = {}) => {
