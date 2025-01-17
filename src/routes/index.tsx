@@ -19,7 +19,6 @@ export const Route = createFileRoute('/')({
 function Main() {
     const productsQuery = useQuery(productsQueryOptions);
     const { data: products, isFetching } = productsQuery;
-
     return (
         <>
             <div css={mainStyle.catecories}>

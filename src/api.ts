@@ -1,3 +1,4 @@
+import { PostgrestSingleResponse, PostgrestError } from '@supabase/supabase-js';
 import { supabase } from './utils/supabase/supabase';
 
 type SearchProductType = {
@@ -6,19 +7,14 @@ type SearchProductType = {
     category?: string;
 };
 
-type QueryResult<T> = {
-    data: T | null;
-    error: Error;
-};
-
-const executeQuery = async <T>(query): Promise<T | Error> => {
-    const { data, error }: QueryResult<T> = await query;
+const executeResult = <T>(res: PostgrestSingleResponse<T>): T | PostgrestError => {
+    const { data, error } = res;
 
     if (error) {
         return error;
     }
 
-    return data !== null ? data : new Error('No data');
+    return data;
 };
 
 const fetchFromSupabase = async (table: string, filters: SearchProductType = {}) => {
@@ -28,7 +24,9 @@ const fetchFromSupabase = async (table: string, filters: SearchProductType = {})
         query = query.eq(key, value);
     }
 
-    return await executeQuery(query);
+    const res = await query;
+
+    return executeResult(res);
 };
 
 export const getProducts = async () => {
