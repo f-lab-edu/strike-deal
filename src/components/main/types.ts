@@ -3,7 +3,7 @@ type TodayRegProductType = {
     createdDate: string;
     title: string;
     description: string;
-    img: string;
+    product_img: string[];
     price: string;
     seller: SellerType;
     category: string;
