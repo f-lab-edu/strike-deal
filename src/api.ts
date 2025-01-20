@@ -7,11 +7,15 @@ type SearchProductType = {
     category?: string;
 };
 
-const executeResult = <T>(res: PostgrestSingleResponse<T>): T | PostgrestError => {
+const executeResult = <T>(res: PostgrestSingleResponse<T>): T => {
     const { data, error } = res;
 
     if (error) {
-        return error;
+        throw error;
+    }
+
+    if (!data) {
+        throw new Error('No data');
     }
 
     return data;
