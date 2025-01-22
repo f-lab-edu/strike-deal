@@ -11,16 +11,11 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ProductImport } from './routes/product'
 import { Route as LoginImport } from './routes/login'
 import { Route as IndexImport } from './routes/index'
+import { Route as ProductsProductIdImport } from './routes/products.$productId'
 
 // Create/Update Routes
-
-const ProductRoute = ProductImport.update({
-  path: '/product',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const LoginRoute = LoginImport.update({
   path: '/login',
@@ -29,6 +24,11 @@ const LoginRoute = LoginImport.update({
 
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProductsProductIdRoute = ProductsProductIdImport.update({
+  path: '/products/$productId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -50,11 +50,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
-    '/product': {
-      id: '/product'
-      path: '/product'
-      fullPath: '/product'
-      preLoaderRoute: typeof ProductImport
+    '/products/$productId': {
+      id: '/products/$productId'
+      path: '/products/$productId'
+      fullPath: '/products/$productId'
+      preLoaderRoute: typeof ProductsProductIdImport
       parentRoute: typeof rootRoute
     }
   }
@@ -65,7 +65,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
   LoginRoute,
-  ProductRoute,
+  ProductsProductIdRoute,
 })
 
 /* prettier-ignore-end */
@@ -78,7 +78,7 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/login",
-        "/product"
+        "/products/$productId"
       ]
     },
     "/": {
@@ -87,8 +87,8 @@ export const routeTree = rootRoute.addChildren({
     "/login": {
       "filePath": "login.tsx"
     },
-    "/product": {
-      "filePath": "product.tsx"
+    "/products/$productId": {
+      "filePath": "products.$productId.tsx"
     }
   }
 }

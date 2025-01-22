@@ -8,20 +8,17 @@ type UserType = {
 };
 
 type ProductDetailType = {
-    id: string;
-    createdDate: string;
-    updateDate: string;
+    id: number;
+    created_at: string;
+    updated_at: string;
     title: string;
-    description: string;
-    img: string[];
+    desc: string;
+    product_img: string[];
     price: number;
     category: string;
-    brand?: string;
-    color?: string[];
-    size?: string;
-    postUser: UserType;
-    likes: number;
-    count: number; // view count
+    like_user: number;
+    count?: number; // view count
+    is_done: boolean;
 };
 
 export type { ProductDetailType };
